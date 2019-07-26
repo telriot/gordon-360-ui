@@ -29,6 +29,9 @@ $drawer-width: 240px;
     color: $neutral-gray;
     text-transform: capitalize;
     min-width: 90px;
+    &:hover {
+      text-decoration: none !important;
+    }
   }
   .menu-button {
     margin-left: -12px;
