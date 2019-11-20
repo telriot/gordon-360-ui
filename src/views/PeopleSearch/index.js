@@ -281,7 +281,15 @@ class PeopleSearch extends Component {
       try {
         const profile = await user.getProfileInfo();
         const personType = profile.PersonType;
-        const [majors, minors, halls, states, countries, departments, buildings] = await Promise.all([
+        const [
+          majors,
+          minors,
+          halls,
+          states,
+          countries,
+          departments,
+          buildings,
+        ] = await Promise.all([
           goStalk.getMajors(),
           goStalk.getMinors(),
           goStalk.getHalls(),
@@ -401,7 +409,6 @@ class PeopleSearch extends Component {
         }
       }
     }
-
   }
 
   handleAdditionalOpsExpandClick = () => {
@@ -643,8 +650,6 @@ class PeopleSearch extends Component {
       </MenuItem>
     ));
 
-
-
     /* Used to re-render the page when the network connection changes.
      *  this.state.network is compared to the message received to prevent
      *  multiple re-renders that creates extreme performance lost.
@@ -767,7 +772,7 @@ class PeopleSearch extends Component {
       if (networkStatus === 'online') {
         PeopleSearch = (
           <Grid container justify="center" spacing={6}>
-            <Grid item xs={12} md={8}>
+            <Grid item xs={12} md={10}>
               <Card>
                 <CardContent
                   style={{

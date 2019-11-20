@@ -9,6 +9,7 @@ import { Link } from 'react-router-dom';
 
 import './peopleSearchResult.css';
 import '../../../../app.css';
+import G from 'glob';
 
 export default class PeopleSearchResult extends Component {
   constructor(props) {
@@ -107,7 +108,7 @@ export default class PeopleSearchResult extends Component {
               padding: '1rem',
             }}
           >
-            <Grid item xs={1}>
+            <Grid item xs={1.5}>
               <IMG
                 className="avatar"
                 src={`data:image/jpg;base64,${this.state.avatar}`}
@@ -127,7 +128,8 @@ export default class PeopleSearchResult extends Component {
             <Grid item xs={1}>
               <Typography>{Person.Type}</Typography>
             </Grid>
-            <Grid item xs={3}>
+            <Grid item xs={0.5}></Grid>
+            <Grid item xs={2}>
               <Typography>{personClassJobTitle}</Typography>
             </Grid>
             <Grid item xs={2}>
