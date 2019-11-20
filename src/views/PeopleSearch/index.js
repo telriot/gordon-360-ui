@@ -123,7 +123,7 @@ class PeopleSearch extends Component {
 
   makeHeader() {
     let content = (
-      <Media query="(min-width: 960px)">
+      <Media query="(min-width: 1350px)">
         {matches =>
           matches ? (
             <div style={styles.headerStyle}>
@@ -262,7 +262,7 @@ class PeopleSearch extends Component {
       } else {
         this.setState({
           peopleSearchResults: (
-            <Media query="(min-width: 960px)">
+            <Media query="(min-width: 1350px)">
               {matches =>
                 matches
                   ? peopleSearchResults.map(person => <PeopleSearchResult Person={person} />)
@@ -281,7 +281,15 @@ class PeopleSearch extends Component {
       try {
         const profile = await user.getProfileInfo();
         const personType = profile.PersonType;
-        const [majors, minors, halls, states, countries, departments, buildings] = await Promise.all([
+        const [
+          majors,
+          minors,
+          halls,
+          states,
+          countries,
+          departments,
+          buildings,
+        ] = await Promise.all([
           goStalk.getMajors(),
           goStalk.getMinors(),
           goStalk.getHalls(),
@@ -385,7 +393,7 @@ class PeopleSearch extends Component {
           } else {
             this.setState({
               peopleSearchResults: (
-                <Media query="(min-width: 960px)">
+                <Media query="(min-width: 1350px)">
                   {matches =>
                     matches
                       ? peopleSearchResults.map(person => <PeopleSearchResult Person={person} />)
@@ -401,7 +409,6 @@ class PeopleSearch extends Component {
         }
       }
     }
-
   }
 
   handleAdditionalOpsExpandClick = () => {
@@ -642,8 +649,6 @@ class PeopleSearch extends Component {
         {building}
       </MenuItem>
     ));
-
-
 
     /* Used to re-render the page when the network connection changes.
      *  this.state.network is compared to the message received to prevent
