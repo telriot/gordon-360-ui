@@ -385,21 +385,20 @@ export default class Profile extends Component {
                 </Grid>
 
                 <Grid item xs={12} lg={5}>
-                  <Grid container direction="column" spacing={2}>
+                  <Grid container direction="column" spacing={0}>
                     {this.state.officeinfo !== null && this.state.officeinfo}
                     {this.state.profileinfo}
                   </Grid>
                 </Grid>
+
                 <Grid item xs={12} lg={5}>
-                  <Grid container direction="column" spacing={2}>
-                    <Grid item xs={12} sm={12} md={12} lg={12}>
-                      <Card>
-                        <CardContent>
-                          <CardHeader title="Involvements" />
-                          <List>{displayedMembershipList}</List>
-                        </CardContent>
-                      </Card>
-                    </Grid>
+                  <Grid item xs={12} sm={12} md={12} lg={12}>
+                    <Card>
+                      <CardContent>
+                        <CardHeader title="Involvements" />
+                        <List>{displayedMembershipList}</List>
+                      </CardContent>
+                    </Card>
                   </Grid>
                 </Grid>
               </Grid>
