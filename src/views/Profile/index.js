@@ -338,15 +338,44 @@ export default class Profile extends Component {
                                 {instagramButton}
                               </Grid>
                               {this.state.profile.Email !== '' && (
-                                <a
-                                  href={`mailto:${this.state.profile.Email}`}
-                                  className="gc360-text-link gc360-profile_email"
+                                // <a
+                                //   href={`mailto:${this.state.profile.Email}`}
+                                //   className="gc360-text-link gc360-profile_email"
+                                // >
+                                //   <EmailIcon className="gc360-profile_email_icon" />
+                                //   <Typography className="gc360-profile_email_text">
+                                //     {this.state.profile.Email}
+                                //   </Typography>
+                                // </a>
+                                <div
+                                  style={{
+                                    marginTop: '20px',
+                                    display: 'flex',
+                                    justifyContent: 'center',
+                                  }}
                                 >
-                                  <EmailIcon className="gc360-profile_email_icon" />
-                                  <Typography className="gc360-profile_email_text">
-                                    {this.state.profile.Email}
-                                  </Typography>
-                                </a>
+                                  <a
+                                    href={`mailto:${this.state.profile.Email}`}
+                                    className="gc360-text-link"
+                                  >
+                                    <div
+                                      style={{
+                                        display: 'flex',
+                                        alignItems: 'center',
+                                        alignContent: 'center',
+                                        justifyContent: 'center',
+                                      }}
+                                    >
+                                      <EmailIcon
+                                        className="gc360-profile_email_icon"
+                                        style={{ marginRight: '0.75rem' }}
+                                      />
+                                      <Typography className="gc360-profile_email_text">
+                                        {this.state.profile.Email}
+                                      </Typography>
+                                    </div>
+                                  </a>
+                                </div>
                               )}
                             </Grid>
                           </Grid>
