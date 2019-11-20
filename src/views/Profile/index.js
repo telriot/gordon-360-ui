@@ -338,15 +338,6 @@ export default class Profile extends Component {
                                 {instagramButton}
                               </Grid>
                               {this.state.profile.Email !== '' && (
-                                // <a
-                                //   href={`mailto:${this.state.profile.Email}`}
-                                //   className="gc360-text-link gc360-profile_email"
-                                // >
-                                //   <EmailIcon className="gc360-profile_email_icon" />
-                                //   <Typography className="gc360-profile_email_text">
-                                //     {this.state.profile.Email}
-                                //   </Typography>
-                                // </a>
                                 <div
                                   style={{
                                     marginTop: '20px',
