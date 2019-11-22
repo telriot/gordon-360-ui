@@ -235,6 +235,7 @@ class GordonSchedulePanel extends Component {
   render() {
     const replaced = this.state.description
   .replace(urlRegex({strict: false}), function(url) {
+    // Paired programming
     return '<a target="_blank" rel="noopener" href="'+ url + '">' + url + "</a>";
   });
 
