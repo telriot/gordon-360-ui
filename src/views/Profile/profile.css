@@ -1,0 +1,50 @@
+.alignPicCenter {
+  padding-top: 8%; }
+
+.rounded-corners {
+  border-radius: 0.5rem; }
+
+.gc360-profile_icon {
+  font-size: 28px;
+  color: black;
+  transition: color 200ms; }
+  .gc360-profile_icon:hover {
+    color: #00aeef !important; }
+
+.gc360-profile_email {
+  display: grid;
+  grid-template-columns: 10% 10% 70% 10%;
+  justify-items: center; }
+  .gc360-profile_email_icon {
+    position: relative;
+    right: 40px;
+    grid-column: 2;
+    font-size: 28px; }
+  .gc360-profile_email_text {
+    grid-column: 3; }
+
+.edit-icon {
+  color: #000;
+  transition: color 200ms; }
+  .edit-icon:hover {
+    color: #00aeef;
+    cursor: pointer; }
+
+.personal-office-grid {
+  grid-row-gap: 100px; }
+
+@media (max-width: 420px) {
+  .alignPicCenter {
+    padding-top: 0%; } }
+
+@media (min-width: 600px) {
+  .alignPicCenter {
+    padding-top: 0%; } }
+
+@media (min-width: 720px) {
+  .alignPicCenter {
+    padding-top: 8%; } }
+
+@media (min-width: 1024px) {
+  .alignPicCenter {
+    padding-top: 5%; } }
