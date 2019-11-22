@@ -89,7 +89,7 @@ class GordonSchedulePanel extends Component {
     }
     if (this.scheduleControlInfo) {
       this.setState({ isSchedulePrivate: this.scheduleControlInfo.IsSchedulePrivate,
-        description: this.scheduleControlInfo.Description ? 
+        description: this.scheduleControlInfo.Description ?
         this.scheduleControlInfo.Description.replace(new RegExp("SlSh", 'g'), '/').replace(new RegExp("CoLn", 'g'), ':')
       .replace(new RegExp("dOT", 'g'), '.') : '',
        modifiedTimeStamp: this.scheduleControlInfo.ModifiedTimeStamp });
@@ -235,12 +235,7 @@ class GordonSchedulePanel extends Component {
   render() {
     const replaced = this.state.description
   .replace(urlRegex({strict: false}), function(url) {
-    if ((url.split('://')[0] !== 'http') || url.split('://')[0] !== 'https'){
-     return '<a target="_blank" rel="noopener" href="https://'+ url + '">' + url + "</a>";
-    }
-    else{
-  return '<a target="_blank" rel="noopener" href="'+ url + '">' + url + "</a>";
-    }
+    return '<a target="_blank" rel="noopener" href="'+ url + '">' + url + "</a>";
   });
 
 
@@ -275,7 +270,7 @@ class GordonSchedulePanel extends Component {
             descriptiontext={this.state.description}
           />
         );
-    
+
         myScheduleDialog = (
           <MyScheduleDialog
             onDialogSubmit={this.handleMyScheduleSubmit}
@@ -288,7 +283,7 @@ class GordonSchedulePanel extends Component {
             resourceId={this.state.resourceId}
           />
         );
-    
+
         removeScheduleDialog = (
           <RemoveScheduleDialog
             onDialogSubmit={this.handleRemoveSubmit}
@@ -298,7 +293,7 @@ class GordonSchedulePanel extends Component {
         );
       }
 
-      
+
 
 
     if (this.props.myProf && !isFaculty) {
@@ -325,9 +320,9 @@ class GordonSchedulePanel extends Component {
     if (this.props.myProf) {
       editDescriptionButton = (
         <Fragment>
-          <Button 
-            variant="contained" 
-            style={button} 
+          <Button
+            variant="contained"
+            style={button}
             onClick={this.handleEditDescriptionOpen}>EDIT DESCRIPTION</Button>
         </Fragment>
       );
@@ -338,7 +333,7 @@ class GordonSchedulePanel extends Component {
         <Fragment>
           <Button
             variant="contained"
-            style={{backgroundColor:gordonColors.secondary.red, color:"white"}} 
+            style={{backgroundColor:gordonColors.secondary.red, color:"white"}}
             onClick={this.handleRemoveMyScheduleOpen}
             disabled={this.state.disabled} //disabled
           >
