@@ -11,7 +11,7 @@ import '../../app.css';
 
 export default class Office extends Component {
   render() {
-    let OfficeHours, OfficePhone, Room, Office;
+    let OfficeHours, OfficePhone, Room, Office, Department;
     if (String(this.props.profile.PersonType).includes('fac')) {
       if (
         this.props.profile.BuildingDescription === '' &&
@@ -85,11 +85,32 @@ export default class Office extends Component {
         );
       }
 
+      if (String(this.props.profile.PersonType).includes('fac')) {
+        if (this.props.profile.OnCampusDepartment !== '') {
+          Department = (
+            <div>
+              <ListItem>
+                <Grid container justify="center">
+                  <Grid item xs={6} sm={6} md={3} lg={6}>
+                    <Typography>Department:</Typography>
+                  </Grid>
+                  <Grid item xs={6} sm={6} md={9} lg={6} justify="right">
+                    <Typography>{this.props.profile.OnCampusDepartment}</Typography>
+                  </Grid>
+                </Grid>
+              </ListItem>
+              <Divider />
+            </div>
+          );
+        }
+      }
+
       Office = (
         <Card>
           <CardContent>
             <CardHeader title="Office Information" />
             <List>
+              {Department}
               {Room}
               {OfficePhone}
               {OfficeHours}

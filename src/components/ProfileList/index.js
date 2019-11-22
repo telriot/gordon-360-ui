@@ -319,7 +319,6 @@ class ProfileList extends Component {
             {majors}
             {minors}
             {residence}
-            {Department}
             {mobilephone}
             {studentID}
             {homephone}
