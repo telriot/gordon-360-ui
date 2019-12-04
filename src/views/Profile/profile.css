@@ -16,8 +16,6 @@
   grid-template-columns: 10% 10% 70% 10%;
   justify-items: center; }
   .gc360-profile_email_icon {
-    position: relative;
-    right: 40px;
     grid-column: 2;
     font-size: 28px; }
   .gc360-profile_email_text {
