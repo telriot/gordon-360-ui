@@ -59,7 +59,7 @@ const styles = {
   },
   headerStyle: {
     backgroundColor: gordonColors.primary.blue,
-    color: '#FFF',
+    color: '#ff',
     padding: '10px',
   },
   colorSwitchBase: {
@@ -281,7 +281,15 @@ class PeopleSearch extends Component {
       try {
         const profile = await user.getProfileInfo();
         const personType = profile.PersonType;
-        const [majors, minors, halls, states, countries, departments, buildings] = await Promise.all([
+        const [
+          majors,
+          minors,
+          halls,
+          states,
+          countries,
+          departments,
+          buildings,
+        ] = await Promise.all([
           goStalk.getMajors(),
           goStalk.getMinors(),
           goStalk.getHalls(),
@@ -401,7 +409,6 @@ class PeopleSearch extends Component {
         }
       }
     }
-
   }
 
   handleAdditionalOpsExpandClick = () => {
@@ -642,8 +649,6 @@ class PeopleSearch extends Component {
         {building}
       </MenuItem>
     ));
-
-
 
     /* Used to re-render the page when the network connection changes.
      *  this.state.network is compared to the message received to prevent

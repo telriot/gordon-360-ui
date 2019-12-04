@@ -64,7 +64,7 @@ export const gordonColors = {
       contrastDefaultColor: 'light',
     },
   },
-  neutral: {
+    neutral: {
     lightGray: '#EBEAEA',
     gray: '#CCCCCB',
     grayShades: {
