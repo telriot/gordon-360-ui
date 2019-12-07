@@ -26,8 +26,8 @@ export default class Help extends Component {
                 </div>
               </Card>
             </Grid>
+            <br />
             <Typography variant="body2" gutterBottom component="ul">
-              <br />
               <li>Firstname.Lastname or Gordon email address</li>
               <li>Normal Gordon password</li>
             </Typography>
@@ -41,8 +41,8 @@ export default class Help extends Component {
                 </div>
               </Card>
             </Grid>
+            <br />
             <Typography variant="body2" gutterBottom component="ul">
-              <br />
               <li>
                 <strong>Home</strong> &ndash; Contains a chart displaying the number of days left in
                 the current semester, alongside the number of Christian Life &amp; Worship Credits
@@ -85,8 +85,8 @@ export default class Help extends Component {
                 </div>
               </Card>
             </Grid>
+            <br />
             <Typography variant="body2" gutterBottom component="ul">
-              <br />
               <li>
                 <strong>Subscriber</strong> &ndash; Subscribers will receive Group emails. The
                 Involvement will not appear on your Co-Curricular Transcript.
@@ -127,8 +127,8 @@ export default class Help extends Component {
                 </div>
               </Card>
             </Grid>
+            <br />
             <Typography variant="body2" gutterBottom component="ul">
-              <br />
               <li>
                 <strong>Group Email</strong> &ndash; Leaders/Advisors can email the full roster of
                 Members, plus any Subscribers to your Communications feed. Allows direct connection
@@ -178,8 +178,8 @@ export default class Help extends Component {
                 </div>
               </Card>
             </Grid>
+            <br />
             <Typography variant="body2" gutterBottom component="ul">
-              <br />
               <li>
                 <a
                   href="mailto:cts@gordon.edu?Subject=Gordon 360 Bug"
@@ -201,8 +201,8 @@ export default class Help extends Component {
                 </div>
               </Card>
             </Grid>
+            <br />
             <Typography variant="body2" gutterBottom component="ul">
-              <br />
               <li>
                 Tested successfully on Windows (Firefox, Chrome), Mac (Safari, Firefox, Chrome), and
                 on Android and iPhone default browsers. Currently not working on Edge or Internet
@@ -219,8 +219,8 @@ export default class Help extends Component {
                 </div>
               </Card>
             </Grid>
+            <br />
             <Typography variant="body2" gutterBottom component="ul">
-              <br />
               <li>
                 <strong>Do I have to rejoin an Involvement each semester?</strong> Yes. This allows
                 each student to control their inclusion in Involvements for their Co-Curricular
@@ -254,8 +254,9 @@ export default class Help extends Component {
                 Involvements to receive emails!
               </li>
             </Typography>
+            <br />
             <Typography variant="subtitle1" gutterBottom>
-              <br /> Found a bug?
+              Found a bug?
               <a href="mailto:cts@gordon.edu?Subject=Gordon 360 Bug">
                 <Button style={{ color: gordonColors.primary.cyan }}>Report to CTS</Button>
               </a>
