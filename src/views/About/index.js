@@ -59,8 +59,8 @@ export default class About extends Component {
                 </div>
               </Card>
             </Grid>
+            <br />
             <Typography variant="body2" gutterBottom component="ul">
-              <br />
               <li>Mobile-friendly, responsive web portal</li>
               <li>Promotional access to student Involvement and leadership</li>
               <li>Academic session-based Campus Involvements and Leadership Experiences</li>
@@ -80,8 +80,8 @@ export default class About extends Component {
                 </div>
               </Card>
             </Grid>
+            <br />
             <Typography variant="body2" gutterBottom component="ul">
-              <br />
               <li>In-house Student Record relationship</li>
               <li>
                 Official &ldquo;Gordon Co-Curricular Transcript&rdquo; with unofficial portal view
