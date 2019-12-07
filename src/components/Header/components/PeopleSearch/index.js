@@ -359,6 +359,7 @@ export default class GordonPeopleSearch extends Component {
       content = (
         <span className="gordon-people-search">
           <TextField
+            aria-label="people_search"
             placeholder="People Search"
             value={''}
             onChange={event => this.unauthenticatedSearch()}
