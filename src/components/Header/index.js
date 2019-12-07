@@ -163,7 +163,7 @@ export default class GordonHeader extends Component {
               label="People"
               component={Button}
               style={{ color: 'white' }}
-              disabled={networkStatus}
+              disabled='true'
             />
           </div>
         );
@@ -181,7 +181,7 @@ export default class GordonHeader extends Component {
               label="People"
               component={Button}
               style={{ color: 'white' }}
-              disabled={networkStatus}
+              disabled='true'
             />
           </div>
         );
