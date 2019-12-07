@@ -183,7 +183,7 @@ export default class Help extends Component {
               <li>
                 <a
                   href="mailto:cts@gordon.edu?Subject=Gordon 360 Bug"
-                  style={{ color: gordonColors.primary.cyan }}
+                  style={{ color: gordonColors.primary.blue }}
                 >
                   Contact CTS
                 </a>
