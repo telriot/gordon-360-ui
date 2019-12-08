@@ -20,6 +20,7 @@ import http from './http';
  * @property {boolean} GroupAdmin Boolean if Group Admin or not
  * @property {Number} IDNumber User id
  * @property {String} LastName Last Name
+ * @property {String} Mail_Location mailbox number or building where mail is received
  * @property {Number} MembershipID Membership ID
  * @property {String} Participation Participation Code or abbreviation
  * @property {String} ParticipationDescription Participation description (eg. "Advisor", "Leader")
