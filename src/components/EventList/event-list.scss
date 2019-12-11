@@ -24,16 +24,21 @@
 /* stylelint-disable */
 .event-list > section:nth-child(even) {
   background: #ebeaea;
+  //For Dark Mode background: #161515;
+  //For Dark Mode color: white;
   &:hover {
-    background-color: $primary-cyan;
+    background-color: $primary-cyan; //For Dark Mode rgb(0, 0, 58);
     cursor: pointer;
   }
 }
 
 .event-list > section:nth-child(odd) {
-  background: #ffffff;
+  background: #ebeaea;
+  //For Dark Mode background: #111111;
+  //For Dark Mode color: white;
+
   &:hover {
-    background-color: $primary-cyan;
+    background-color: $primary-cyan; //For Dark Mode rgb(0, 0, 58);
     cursor: pointer;
   }
 }
