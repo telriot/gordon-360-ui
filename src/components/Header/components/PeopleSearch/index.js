@@ -15,6 +15,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import './people-search.css';
 import peopleSearch from '../../../../services/people-search';
+import { InputLabel } from '@material-ui/core';
 const MIN_QUERY_LENGTH = 3;
 
 //  TextBox Input Field
@@ -28,6 +29,7 @@ const renderInput = inputProps => {
       inputRef={ref}
       className={'text-field'}
       InputProps={{
+        type : "text",
         disableUnderline: true,
         classes: {
           root: 'people-search-root',
@@ -41,6 +43,7 @@ const renderInput = inputProps => {
         ),
         ...other,
       }}
+    
     />
   );
 };
@@ -366,9 +369,12 @@ export default class GordonPeopleSearch extends Component {
             className={'text-field'}
             InputProps={{
               disableUnderline: true,
+              type: 'text',
+              label: 'people search',
               classes: {
                 root: 'people-search-root',
                 input: 'people-search-input',
+                label: 'people search'
               },
               startAdornment: (
                 <InputAdornment position="start">

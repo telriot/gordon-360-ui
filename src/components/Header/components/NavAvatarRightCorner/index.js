@@ -300,7 +300,12 @@ export default class GordonNavAvatarRightCorner extends Component {
     } else {
       // Set unauthenticated values for dropdown menu
 
-      avatar = <Avatar className="nav-avatar nav-avatar-placeholder">Guest</Avatar>;
+      avatar = (
+        <Avatar 
+          className="nav-avatar nav-avatar-placeholder"
+          src = "/images/images.png"
+          alt = "Guest Icon"
+      />);
 
       if (networkStatus === 'online') {
         signInOut = (
