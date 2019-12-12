@@ -187,7 +187,7 @@ export default class About extends Component {
             <Typography variant="subtitle1" gutterBottom>
               <br /> Found a bug?
               <a href="mailto:cts@gordon.edu?Subject=Gordon 360 Bug">
-                <Button style={{ color: gordonColors.primary.cyan }}>Report to CTS</Button>
+                <Button style={{ color: gordonColors.primary.blue }}>Report to CTS</Button>
               </a>
             </Typography>
             <hr style={style} />
