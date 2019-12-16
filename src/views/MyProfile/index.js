@@ -319,7 +319,7 @@ class MyProfile extends Component {
         color: 'white',
       },
       uncontainedButton: {
-        color: gordonColors.primary.cyan,
+        color: gordonColors.primary.blue,
       },
     };
 
@@ -362,6 +362,7 @@ class MyProfile extends Component {
       let linkedInButton;
       let instagramButton;
       let editButton;
+      let editText;
       let linkCount = 0; // To record whether or not any links are displayed
       let VPScore;
 
@@ -425,23 +426,13 @@ class MyProfile extends Component {
         );
         linkCount += 1;
       }
-      if (linkCount > 0) {
-        editButton = (
-          <Grid item>
-            <IconButton onClick={this.handleSocialLinksOpen} className="edit-icon">
-              {socialMediaInfo.edit.icon}
-            </IconButton>
-          </Grid>
-        );
-      } else {
-        editButton = (
-          <Grid item>
-            <Button onClick={this.handleSocialLinksOpen} style={style.uncontainedButton}>
-              EDIT SOCIAL MEDIA LINKS
-            </Button>
-          </Grid>
-        );
-      }
+      editButton = (
+        <Grid item>
+          <Button onClick={this.handleSocialLinksOpen} style={style.uncontainedButton}>
+            EDIT SOCIAL MEDIA LINKS
+          </Button>
+        </Grid>
+      );
       let profileCardSize = 12;
       if (String(this.state.personType).includes('stu')) {
         VPScore = (
@@ -557,6 +548,8 @@ class MyProfile extends Component {
                                     {twitterButton}
                                     {linkedInButton}
                                     {instagramButton}
+                                  </Grid>
+                                  <Grid container spacing={2} align="center" justify="center">
                                     {editButton}
                                   </Grid>
                                   {this.state.profile.Email !== '' && (
