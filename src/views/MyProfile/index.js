@@ -362,8 +362,6 @@ class MyProfile extends Component {
       let linkedInButton;
       let instagramButton;
       let editButton;
-      let editText;
-      let linkCount = 0; // To record whether or not any links are displayed
       let VPScore;
 
       if (this.state.facebookLink !== '') {
@@ -379,7 +377,6 @@ class MyProfile extends Component {
             </a>
           </Grid>
         );
-        linkCount += 1;
       }
       if (this.state.twitterLink !== '') {
         twitterButton = (
@@ -394,7 +391,6 @@ class MyProfile extends Component {
             </a>
           </Grid>
         );
-        linkCount += 1;
       }
       if (this.state.linkedInLink !== '') {
         linkedInButton = (
@@ -409,7 +405,6 @@ class MyProfile extends Component {
             </a>
           </Grid>
         );
-        linkCount += 1;
       }
       if (this.state.instagramLink !== '') {
         instagramButton = (
@@ -424,7 +419,6 @@ class MyProfile extends Component {
             </a>
           </Grid>
         );
-        linkCount += 1;
       }
       editButton = (
         <Grid item>
