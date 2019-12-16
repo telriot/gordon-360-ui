@@ -15,7 +15,6 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import './people-search.css';
 import peopleSearch from '../../../../services/people-search';
-import { InputLabel } from '@material-ui/core';
 const MIN_QUERY_LENGTH = 3;
 
 //  TextBox Input Field
@@ -43,7 +42,7 @@ const renderInput = inputProps => {
         ),
         ...other,
       }}
-    
+
     />
   );
 };

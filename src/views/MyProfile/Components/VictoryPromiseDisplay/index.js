@@ -349,7 +349,7 @@ export default class VictoryPromiseDisplay extends React.Component {
                   <Typography
                     variant="body2"
                     className="noInvolvements"
-                    style={{ cursor: 'pointer' }}
+                    style={{ color: gordonColors.primary.blue, cursor: 'pointer' }}
                     onClick={() => this.openVPLink()}
                   >
                     Click here for more information!
