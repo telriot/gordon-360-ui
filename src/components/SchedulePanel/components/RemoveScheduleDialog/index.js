@@ -37,7 +37,7 @@ export default class RemoveScheduleDialog extends React.Component {
           aria-labelledby="alert-dialog-slide-title"
           aria-describedby="alert-dialog-slide-description"
         >
-          <DialogTitle className="title">Are you sure about removing this event?</DialogTitle>
+          <DialogTitle className="title">Are you sure you want to remove this event?</DialogTitle>
           <DialogActions className="buttons">
             <Button
               onClick={this.props.handleRemoveMyScheduleClose}
