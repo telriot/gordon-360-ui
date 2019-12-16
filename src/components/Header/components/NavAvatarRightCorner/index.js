@@ -18,6 +18,7 @@ import { signOut } from '../../../../services/auth';
 
 import './nav-avatar-right-corner.css';
 import '../../../../app.css';
+//import '../../../../click.js';
 import user from '../../../../services/user';
 
 import { Button } from '@material-ui/core';
@@ -176,6 +177,32 @@ export default class GordonNavAvatarRightCorner extends Component {
      *  Defaults to online in case of PWA not being possible
      */
     const networkStatus = JSON.parse(localStorage.getItem('network-status')) || 'online';
+    //clicker effect button
+    let ClickButton;
+    ClickButton = (
+      <button
+        class="clickButton"
+        type="button"
+        onClick={function start() {
+          document.addEventListener('click', clickEffect);
+        }}
+      >
+        Click Effect
+      </button>
+    );
+    function clickEffect(e) {
+      var d = document.createElement('div');
+      d.className = 'clickEffect';
+      d.style.top = e.clientY + 'px';
+      d.style.left = e.clientX + 'px';
+      document.body.appendChild(d);
+      d.addEventListener(
+        'animationend',
+        function() {
+          d.parentElement.removeChild(d);
+        }.bind(this),
+      );
+    }
 
     // Creates the Links button depending on the status of the network found in local storage
     let LinksButton;
@@ -301,11 +328,12 @@ export default class GordonNavAvatarRightCorner extends Component {
       // Set unauthenticated values for dropdown menu
 
       avatar = (
-        <Avatar 
+        <Avatar
           className="nav-avatar nav-avatar-placeholder"
-          src = "/images/images.png"
-          alt = "Guest Icon"
-      />);
+          src="/images/images.png"
+          alt="Guest Icon"
+        />
+      );
 
       if (networkStatus === 'online') {
         signInOut = (
@@ -365,7 +393,10 @@ export default class GordonNavAvatarRightCorner extends Component {
           {FeedbackButton}
           {Admin}
           {signInOut}
+          {/**added a clicker effect button */}
+          {ClickButton}
         </Menu>
+
         <QuickLinksDialog
           handleLinkClickOpen={this.handleLinkClickOpen}
           handleLinkClose={this.handleLinkClose}
