@@ -9,6 +9,7 @@ import {
   Menu,
   MenuItem,
   Tooltip,
+  Checkbox,
   Switch,
 } from '@material-ui/core';
 import React, { Component } from 'react';
