@@ -9,8 +9,6 @@ import {
   Menu,
   MenuItem,
   Tooltip,
-  Checkbox,
-  Switch,
 } from '@material-ui/core';
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
@@ -22,10 +20,7 @@ import './nav-avatar-right-corner.css';
 import '../../../../app.css';
 //import '../../../../click.js';
 import user from '../../../../services/user';
-
 import { Button } from '@material-ui/core';
-//import Switch from '@material-ui/core/Switch';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
 
 export default class GordonNavAvatarRightCorner extends Component {
   constructor(props) {
@@ -49,7 +44,6 @@ export default class GordonNavAvatarRightCorner extends Component {
       linkopen: false,
       anchorEl: null,
       network: 'online',
-      clickEf: false,
     };
   }
 
@@ -130,14 +124,6 @@ export default class GordonNavAvatarRightCorner extends Component {
       this.setState({ name: 'Guest', username: 'Guest' });
     }
   }
-  //clicker effect toggle button
-  async toggleClickEff() {
-    if (this.state.clickEf === false) {
-      this.setState({ clickEf: true });
-    } else {
-      this.setState({ clickEf: false });
-    }
-  }
 
   /**
    * This method checks a peer component Profile
@@ -190,8 +176,9 @@ export default class GordonNavAvatarRightCorner extends Component {
      *  Defaults to online in case of PWA not being possible
      */
     const networkStatus = JSON.parse(localStorage.getItem('network-status')) || 'online';
+
     //clicker effect functions
-    function clickEffect(e) {
+    var clickEffect = function clickEffect(e) {
       var d = document.createElement('div');
       d.className = 'clickEffect';
       d.style.top = e.clientY + 'px';
@@ -204,40 +191,45 @@ export default class GordonNavAvatarRightCorner extends Component {
         },
         //.bind(this),
       );
-    }
-    function start() {
-      var box = document.getElementById('clickerSwitch');
-      box.checked = true;
-      if (box.checked) {
-        document.addEventListener('click', clickEffect);
-      }
-      /* if (this.state.clickEf === false){
-        this.setState({clickEf: true});
-        
-      }
-      else{
-        this.setState({clickEf: false});
-      }*/
-    }
-    //document.addEventListener('click', clickEffect)
+    };
+    let element = document.querySelector('body');
     //Creates clicker effect button
     let ClickButton;
-    ClickButton = (
-      <FormControlLabel
-        control={
-          <Switch
-            //checked={document.addEventListener('click', clickEffect)}
-            id="clickerSwitch"
-            //checked={this.state.clickEf}
-            onChange={start}
-
-            //value="checkedB"
-            //color="primary"
-          />
-        }
-        label="Primary"
-      />
-    );
+    //var clickBut = document.getElementById("clickButton");
+    var clickerC = document.getElementsByClassName('clickerClass');
+    var hasClickEff = '';
+    if (clickerC) {
+      hasClickEff = clickerC.hasClickEff;
+    }
+    if (hasClickEff === 'yes') {
+      ClickButton = (
+        <button
+          id="clickButton"
+          className="clickerClass"
+          onClick={function stop() {
+            clickerC.hasClickEff = 'no';
+            element.removeEventListener('click', clickEffect, true);
+            //window.removeEventListener('click', {start} );
+          }}
+        >
+          Stop Click Effect
+        </button>
+      );
+    } else {
+      ClickButton = (
+        <button
+          id="clickButton"
+          className="clickerClass"
+          onClick={function start() {
+            clickerC.hasClickEff = 'yes';
+            element.addEventListener('click', clickEffect, true);
+            //window.addEventListener('click', {start});
+          }}
+        >
+          Start Click Effect
+        </button>
+      );
+    }
 
     // Creates the Links button depending on the status of the network found in local storage
     let LinksButton;
