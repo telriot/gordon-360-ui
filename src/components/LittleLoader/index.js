@@ -9,7 +9,7 @@ export default class LittleLoader extends Component {
     return (
       <Grid className="little-loader" container justify="center" alignItems="center">
         <Grid item>
-          <CircularProgress size={56} />
+          <CircularProgress size={32} />
         </Grid>
       </Grid>
     );

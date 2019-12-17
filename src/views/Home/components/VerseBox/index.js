@@ -7,6 +7,7 @@ import Autorenew from '@material-ui/icons/Autorenew';
 import { gordonColors } from '../../../../theme';
 import GordonLoader from '../../../../components/LittleLoader';
 import './verseBox.css';
+import { IconButton } from '@material-ui/core';
 // import Button from '@material-ui/core/Button';
 // import ExpansionPanel from '@material-ui/core/ExpansionPanel';
 // import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
@@ -101,11 +102,13 @@ export default class VerseOfTheDay extends Component {
                   <CardHeader id="title" title={title} />
                 </Grid>
                 <Grid item xs={2} align="right">
-                  <Autorenew
-                    fontSize="large"
-                    style={style.button}
-                    onClick={() => this.loadVerse()}
-                  />
+                  <IconButton aria-label="new verse">
+                    <Autorenew
+                      fontSize="large"
+                      style={style.button}
+                      onClick={() => this.loadVerse()}
+                    />
+                  </IconButton>
                   {/* <Button variant="outlined" style={style.button} onClick={() => this.loadVerse()}>
                     New Verse
                   </Button> */}
