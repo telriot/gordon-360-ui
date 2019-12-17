@@ -5,7 +5,7 @@ import CardHeader from '@material-ui/core/CardHeader';
 import Grid from '@material-ui/core/Grid';
 import Autorenew from '@material-ui/icons/Autorenew';
 import { gordonColors } from '../../../../theme';
-import GordonLoader from '../../../../components/Loader';
+import GordonLoader from '../../../../components/LittleLoader';
 import './verseBox.css';
 import Button from '@material-ui/core/Button';
 
@@ -80,7 +80,7 @@ export default class VerseOfTheDay extends Component {
       title = this.state.reference + ' (' + this.state.book + ')';
     }
 
-    // Styling used for button to retrieve a new verse
+    // Styling used for reload button to retrieve a new verse
     const style = {
       button: {
         color: gordonColors.primary.cyan,
@@ -94,10 +94,10 @@ export default class VerseOfTheDay extends Component {
           <Card>
             <CardContent id="verse">
               <Grid container direction="row" alignItems="center">
-                <Grid item xs={7} align="left">
+                <Grid item xs={10} align="left">
                   <CardHeader id="title" title={title} />
                 </Grid>
-                <Grid item xs={5} align="right">
+                <Grid item xs={2} align="right">
                   <Autorenew
                     fontSize="large"
                     style={style.button}
