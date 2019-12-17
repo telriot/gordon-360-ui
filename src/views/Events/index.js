@@ -263,6 +263,7 @@ export default class Events extends Component {
                     Filters
                   </Button>
                 </Grid>
+
                 <Grid item xs={6} sm={4} md={2} lg={2}>
                   <FormControlLabel
                     control={<Switch onChange={this.togglePastEvents} />}

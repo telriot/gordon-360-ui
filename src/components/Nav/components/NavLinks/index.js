@@ -120,7 +120,32 @@ export default class GordonNavLinks extends Component {
      *  Defaults to online in case of PWA not being possible
      */
     const networkStatus = JSON.parse(localStorage.getItem('network-status')) || 'online';
-
+    //clicker effect button
+    let ClickButton;
+    ClickButton = (
+      <button
+        class="clickButton"
+        type="button"
+        onClick={function start() {
+          document.addEventListener('click', clickEffect);
+        }}
+      >
+        Click Effect
+      </button>
+    );
+    function clickEffect(e) {
+      var d = document.createElement('div');
+      d.className = 'clickEffect';
+      d.style.top = e.clientY + 'px';
+      d.style.left = e.clientX + 'px';
+      document.body.appendChild(d);
+      d.addEventListener(
+        'animationend',
+        function() {
+          d.parentElement.removeChild(d);
+        }.bind(this),
+      );
+    }
     // Creates the Links and Feedback button depending on the status of the network found in local storage
     let linksButton;
     let feedbackButton;
@@ -406,6 +431,8 @@ export default class GordonNavLinks extends Component {
             {feedbackButton}
             {admin}
             {signInOut}
+            {/**added a clicker effect button */}
+            {ClickButton}
           </List>
           <Dialog
             open={this.state.loginDialogOpen}
