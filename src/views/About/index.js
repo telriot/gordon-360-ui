@@ -41,7 +41,7 @@ export default class About extends Component {
     return (
       <section>
         <Grid container justify="center">
-          <Grid item xs={12} md={12} lg={4}>
+          <Grid item xs={8} md={7} lg={4}>
             <br />
             <hr style={style} />
             <Typography variant="h5" gutterBottom align="center">
