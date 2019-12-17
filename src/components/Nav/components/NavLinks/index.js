@@ -120,20 +120,8 @@ export default class GordonNavLinks extends Component {
      *  Defaults to online in case of PWA not being possible
      */
     const networkStatus = JSON.parse(localStorage.getItem('network-status')) || 'online';
-    //clicker effect button
-    let ClickButton;
-    ClickButton = (
-      <button
-        class="clickButton"
-        type="button"
-        onClick={function start() {
-          document.addEventListener('click', clickEffect);
-        }}
-      >
-        Click Effect
-      </button>
-    );
-    function clickEffect(e) {
+    //clicker effect functions
+    var clickEffect = function clickEffect(e) {
       var d = document.createElement('div');
       d.className = 'clickEffect';
       d.style.top = e.clientY + 'px';
@@ -143,7 +131,49 @@ export default class GordonNavLinks extends Component {
         'animationend',
         function() {
           d.parentElement.removeChild(d);
-        }.bind(this),
+        },
+        //.bind(this),
+      );
+    };
+    let element = document.querySelector('body');
+    //Creates clicker effect button
+    let ClickButton;
+    //var clickBut = document.getElementById("clickButton");
+    var clickerC = document.getElementsByClassName('clickerClass');
+    var hasClickEff = '';
+    if (clickerC) {
+      hasClickEff = clickerC.hasClickEff;
+    }
+    if (hasClickEff === 'yes') {
+      ClickButton = (
+        <button
+          variant="outlined"
+          color="primary"
+          id="clickButton"
+          className="clickerClass"
+          onClick={function stop() {
+            clickerC.hasClickEff = 'no';
+            element.removeEventListener('click', clickEffect, true);
+            //window.removeEventListener('click', {start} );
+          }}
+        >
+          Stop Click Effect
+        </button>
+      );
+    } else {
+      ClickButton = (
+        <button
+          id="clickButton"
+          type="button"
+          className="clickerClass"
+          onClick={function start() {
+            clickerC.hasClickEff = 'yes';
+            element.addEventListener('click', clickEffect, true);
+            //window.addEventListener('click', {start});
+          }}
+        >
+          Start Click Effect
+        </button>
       );
     }
     // Creates the Links and Feedback button depending on the status of the network found in local storage
