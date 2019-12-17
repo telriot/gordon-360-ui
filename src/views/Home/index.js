@@ -1,5 +1,6 @@
 import Grid from '@material-ui/core/Grid';
 import Card from '@material-ui/core/Card';
+import CardHeader from '@material-ui/core/CardHeader';
 import React, { Component } from 'react';
 import Carousel from './components/Carousel';
 import CLWCreditsDaysLeft from './components/CLWCreditsDaysLeft';
@@ -107,6 +108,7 @@ export default class Home extends Component {
           </Grid>
           <Grid item xs={12} md={10}>
             <Card>
+              <CardHeader title={"Today's Weather"} />
               <App />
             </Card>
           </Grid>

@@ -1,5 +1,6 @@
 //Written by Adam Princiotta
 import React, { Component } from 'react';
+import './App.css';
 
 //const API_KEY = '6b9cd1d2df6ce413584eb076deea6888';
 
@@ -42,34 +43,38 @@ class App extends React.Component {
     });
     /*console.log("temp: ", this.state.temperature)
         console.log("description: ", this.state.description)
-        console.log("iconURL: ", this.state.icon)*/
+        console.log("iconURL: ", this.state.icon)
+        
+        
+        <img src={this.state.iconNext9}></img>
+        <div3>{this.state.temperatureNext9}°</div3>
+        <div3>{this.state.descriptionNext9}</div3>
+
+        <img src={this.state.iconNext12}></img>
+        <div3>{this.state.temperatureNext12}°</div3>
+        <div3>{this.state.descriptionNext12}</div3>
+        */
   };
 
   render() {
     return (
-      <div>
-        <p>
+      <div3>
+        <img1>
           <img src={this.state.iconNow}></img>
-        </p>
-        <p>{this.state.temperatureNow} °</p>
-        <p>{this.state.descriptionNow} </p>
+        </img1>
+        <div3>{this.state.temperatureNow}°</div3>
+        <div3>{this.state.descriptionNow}</div3>
 
-        <img src={this.state.iconNext3}></img>
-        <p>{this.state.temperatureNext3} °</p>
-        <p>{this.state.descriptionNext3} </p>
+        <img2>
+          <img src={this.state.iconNext3}></img>
+        </img2>
+        <div3>{this.state.temperatureNext3}°</div3>
+        <div3>{this.state.descriptionNext3}</div3>
 
         <img src={this.state.iconNext6}></img>
-        <p>{this.state.temperatureNext6} °</p>
-        <p>{this.state.descriptionNext6} </p>
-
-        <img src={this.state.iconNext9}></img>
-        <p>{this.state.temperatureNext9} °</p>
-        <p>{this.state.descriptionNext9} </p>
-
-        <img src={this.state.iconNext12}></img>
-        <p>{this.state.temperatureNext12} °</p>
-        <p>{this.state.descriptionNext12} </p>
-      </div>
+        <div3>{this.state.temperatureNext6}°</div3>
+        <div3>{this.state.descriptionNext6}</div3>
+      </div3>
     );
   }
 }
