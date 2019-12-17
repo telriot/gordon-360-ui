@@ -61,7 +61,7 @@ export default class Requests extends Component {
       padding: '10px',
     };
     const button = {
-      color: gordonColors.primary.cyan,
+      color: gordonColors.primary.blue,
     };
 
     if (this.state.open === false) {

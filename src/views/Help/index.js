@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import Grid from '@material-ui/core/Grid';
 import Button from '@material-ui/core/Button';
 import Card from '@material-ui/core/Card';
+import Container from '@material-ui/core/Container';
 import { gordonColors } from '../../theme';
 import './help.css';
 
@@ -16,7 +17,8 @@ export default class Help extends Component {
     return (
       <section>
         <Grid container justify="center">
-          <Grid item xs={8} md={7} lg={4}>
+          {/* <Grid item xs={8} md={7} lg={5} xl={2}> */}
+          <Container maxwidth="xs">
             <Grid item>
               <Card>
                 <div style={headerStyle}>
@@ -261,7 +263,7 @@ export default class Help extends Component {
                 <Button style={{ color: gordonColors.primary.cyan }}>Report to CTS</Button>
               </a>
             </Typography>
-          </Grid>
+          {/* </Grid> */}</Container>
         </Grid>
       </section>
     );

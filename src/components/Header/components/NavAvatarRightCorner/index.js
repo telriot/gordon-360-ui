@@ -9,7 +9,6 @@ import {
   Menu,
   MenuItem,
   Tooltip,
-  Checkbox,
   Switch,
 } from '@material-ui/core';
 import React, { Component } from 'react';
@@ -213,7 +212,7 @@ export default class GordonNavAvatarRightCorner extends Component {
       }
       /* if (this.state.clickEf === false){
         this.setState({clickEf: true});
-        
+
       }
       else{
         this.setState({clickEf: false});

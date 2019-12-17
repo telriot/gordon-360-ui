@@ -443,7 +443,9 @@ export default class GordonNavLinks extends Component {
             <DialogTitle id="login-dialog-title">{'Login to use People Search'}</DialogTitle>
             <DialogContent>
               <DialogContentText id="login-dialog-description">
-                You are not logged in. Please log in to use People Search.
+                <span style={{color: 'black'}}>
+                  You are not logged in. Please log in to use People Search.
+                </span>
               </DialogContentText>
             </DialogContent>
             <DialogActions>
