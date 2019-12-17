@@ -35,7 +35,7 @@ export default class InvolvementsStatus extends Component {
   render() {
     const headerStyle = {
       backgroundColor: gordonColors.primary.blue,
-      color: '#FFF',
+      color: '#fff',
       padding: '10px',
     };
 
