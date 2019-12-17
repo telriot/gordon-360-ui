@@ -103,9 +103,9 @@ export default class Home extends Component {
           <Grid item xs={12} md={10}>
             <Carousel />
           </Grid>
-          <Grid item xs={12} md={10}>
-            <VerseOfTheDay />
-          </Grid>
+
+          <VerseOfTheDay />
+
           <Grid item xs={12} md={5}>
             {doughnut}
           </Grid>
