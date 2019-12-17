@@ -7,12 +7,11 @@ import Autorenew from '@material-ui/icons/Autorenew';
 import { gordonColors } from '../../../../theme';
 import GordonLoader from '../../../../components/LittleLoader';
 import './verseBox.css';
-import Button from '@material-ui/core/Button';
-
-import ExpansionPanel from '@material-ui/core/ExpansionPanel';
-import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
-import ExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails';
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+// import Button from '@material-ui/core/Button';
+// import ExpansionPanel from '@material-ui/core/ExpansionPanel';
+// import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
+// import ExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails';
+// import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 
 export default class VerseOfTheDay extends Component {
   constructor(props) {
@@ -65,7 +64,7 @@ export default class VerseOfTheDay extends Component {
     }
 
     let content;
-    let title;
+    let title = 'Loading...';
 
     if (this.state.loading === true) {
       content = <GordonLoader />;
@@ -126,9 +125,9 @@ export default class VerseOfTheDay extends Component {
                 <CardHeader id="title" title={title} />
               </Grid>
               <Grid item xs={5} align="right">
-                <Button variant="contained" style={style.button} onClick={() => this.loadVerse()}>
+                {/* <Button variant="contained" style={style.button} onClick={() => this.loadVerse()}>
                   Old Verse
-                </Button>
+                </Button> */}
               </Grid>
             </Grid>
             {content}
