@@ -1,4 +1,5 @@
 import Grid from '@material-ui/core/Grid';
+import Card from '@material-ui/core/Card';
 import React, { Component } from 'react';
 import Carousel from './components/Carousel';
 import CLWCreditsDaysLeft from './components/CLWCreditsDaysLeft';
@@ -7,6 +8,7 @@ import Requests from './components/Requests';
 import DiningBalance from './components/DiningBalance';
 import user from '../../services/user';
 import Login from '../Login';
+import App from './components/Weather/App.js';
 
 import './home.css';
 
@@ -102,6 +104,11 @@ export default class Home extends Component {
         <Grid container justify="center" spacing={2}>
           <Grid item xs={12} md={10}>
             <Carousel />
+          </Grid>
+          <Grid item xs={12} md={10}>
+            <Card>
+              <App />
+            </Card>
           </Grid>
           <Grid item xs={12} md={5}>
             {doughnut}

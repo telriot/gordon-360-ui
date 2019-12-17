@@ -24,7 +24,6 @@ import GordonPeopleSearch from './components/PeopleSearch';
 import GordonNavAvatarRightCorner from './components/NavAvatarRightCorner';
 import routes from '../../routes';
 import { projectName } from '../../project-name';
-import App from './components/Weather/App.js';
 
 const getRouteName = route => {
   if (route.name) {
@@ -246,13 +245,6 @@ export default class GordonHeader extends Component {
                   to="/events"
                 />
                 {PeopleTab}
-              </Tabs>
-            </div>
-
-            {/* calls App.js that calls and displays the weather information */}
-            <div className="center-container">
-              <Tabs centered value={this.value} onChange={this.handleChange}>
-                <App></App>
               </Tabs>
             </div>
 
