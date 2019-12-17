@@ -146,34 +146,38 @@ export default class GordonNavLinks extends Component {
     }
     if (hasClickEff === 'yes') {
       ClickButton = (
-        <button
-          variant="outlined"
-          color="primary"
-          id="clickButton"
-          className="clickerClass"
-          onClick={function stop() {
-            clickerC.hasClickEff = 'no';
-            element.removeEventListener('click', clickEffect, true);
-            //window.removeEventListener('click', {start} );
-          }}
-        >
-          Stop Click Effect
-        </button>
+        <ListItem>
+          <NavLink
+            variant="outlined"
+            color="primary"
+            id="clickButton"
+            className="clickerClass"
+            onClick={function stop() {
+              clickerC.hasClickEff = 'no';
+              element.removeEventListener('click', clickEffect, true);
+              //window.removeEventListener('click', {start} );
+            }}
+          >
+            Stop Click Effect
+          </NavLink>
+        </ListItem>
       );
     } else {
       ClickButton = (
-        <button
-          id="clickButton"
-          type="button"
-          className="clickerClass"
-          onClick={function start() {
-            clickerC.hasClickEff = 'yes';
-            element.addEventListener('click', clickEffect, true);
-            //window.addEventListener('click', {start});
-          }}
-        >
-          Start Click Effect
-        </button>
+        <ListItem>
+          <NavLink
+            id="clickButton"
+            type="button"
+            className="clickerClass"
+            onClick={function start() {
+              clickerC.hasClickEff = 'yes';
+              element.addEventListener('click', clickEffect, true);
+              //window.addEventListener('click', {start});
+            }}
+          >
+            Start Click Effect
+          </NavLink>
+        </ListItem>
       );
     }
     // Creates the Links and Feedback button depending on the status of the network found in local storage

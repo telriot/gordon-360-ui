@@ -12,6 +12,7 @@ import {
 } from '@material-ui/core';
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import QuickLinksDialog from '../../../QuickLinksDialog';
 import { signOut } from '../../../../services/auth';
@@ -203,31 +204,35 @@ export default class GordonNavAvatarRightCorner extends Component {
     }
     if (hasClickEff === 'yes') {
       ClickButton = (
-        <button
-          id="clickButton"
-          className="clickerClass"
-          onClick={function stop() {
-            clickerC.hasClickEff = 'no';
-            element.removeEventListener('click', clickEffect, true);
-            //window.removeEventListener('click', {start} );
-          }}
-        >
-          Stop Click Effect
-        </button>
+        <MenuItem>
+          <NavLink
+            id="clickButton"
+            className="clickerClass"
+            onClick={function stop() {
+              clickerC.hasClickEff = 'no';
+              element.removeEventListener('click', clickEffect, true);
+              //window.removeEventListener('click', {start} );
+            }}
+          >
+            Stop Click Effect
+          </NavLink>
+        </MenuItem>
       );
     } else {
       ClickButton = (
-        <button
-          id="clickButton"
-          className="clickerClass"
-          onClick={function start() {
-            clickerC.hasClickEff = 'yes';
-            element.addEventListener('click', clickEffect, true);
-            //window.addEventListener('click', {start});
-          }}
-        >
-          Start Click Effect
-        </button>
+        <MenuItem>
+          <NavLink
+            id="clickButton"
+            className="clickerClass"
+            onClick={function start() {
+              clickerC.hasClickEff = 'yes';
+              element.addEventListener('click', clickEffect, true);
+              //window.addEventListener('click', {start});
+            }}
+          >
+            Start Click Effect
+          </NavLink>
+        </MenuItem>
       );
     }
 
