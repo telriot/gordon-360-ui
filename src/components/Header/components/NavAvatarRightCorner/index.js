@@ -9,6 +9,8 @@ import {
   Menu,
   MenuItem,
   Tooltip,
+  Checkbox,
+  Switch,
 } from '@material-ui/core';
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
@@ -22,6 +24,8 @@ import '../../../../app.css';
 import user from '../../../../services/user';
 
 import { Button } from '@material-ui/core';
+//import Switch from '@material-ui/core/Switch';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
 
 export default class GordonNavAvatarRightCorner extends Component {
   constructor(props) {
@@ -45,6 +49,7 @@ export default class GordonNavAvatarRightCorner extends Component {
       linkopen: false,
       anchorEl: null,
       network: 'online',
+      clickEf: false,
     };
   }
 
@@ -125,6 +130,14 @@ export default class GordonNavAvatarRightCorner extends Component {
       this.setState({ name: 'Guest', username: 'Guest' });
     }
   }
+  //clicker effect toggle button
+  async toggleClickEff() {
+    if (this.state.clickEf === false) {
+      this.setState({ clickEf: true });
+    } else {
+      this.setState({ clickEf: false });
+    }
+  }
 
   /**
    * This method checks a peer component Profile
@@ -177,19 +190,7 @@ export default class GordonNavAvatarRightCorner extends Component {
      *  Defaults to online in case of PWA not being possible
      */
     const networkStatus = JSON.parse(localStorage.getItem('network-status')) || 'online';
-    //clicker effect button
-    let ClickButton;
-    ClickButton = (
-      <button
-        class="clickButton"
-        type="button"
-        onClick={function start() {
-          document.addEventListener('click', clickEffect);
-        }}
-      >
-        Click Effect
-      </button>
-    );
+    //clicker effect functions
     function clickEffect(e) {
       var d = document.createElement('div');
       d.className = 'clickEffect';
@@ -200,9 +201,43 @@ export default class GordonNavAvatarRightCorner extends Component {
         'animationend',
         function() {
           d.parentElement.removeChild(d);
-        }.bind(this),
+        },
+        //.bind(this),
       );
     }
+    function start() {
+      var box = document.getElementById('clickerSwitch');
+      box.checked = true;
+      if (box.checked) {
+        document.addEventListener('click', clickEffect);
+      }
+      /* if (this.state.clickEf === false){
+        this.setState({clickEf: true});
+        
+      }
+      else{
+        this.setState({clickEf: false});
+      }*/
+    }
+    //document.addEventListener('click', clickEffect)
+    //Creates clicker effect button
+    let ClickButton;
+    ClickButton = (
+      <FormControlLabel
+        control={
+          <Switch
+            //checked={document.addEventListener('click', clickEffect)}
+            id="clickerSwitch"
+            //checked={this.state.clickEf}
+            onChange={start}
+
+            //value="checkedB"
+            //color="primary"
+          />
+        }
+        label="Primary"
+      />
+    );
 
     // Creates the Links button depending on the status of the network found in local storage
     let LinksButton;
