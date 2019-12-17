@@ -154,7 +154,7 @@ class GordonNavAvatar extends Component {
         </Button>
       );
     } else {
-      let avatar = <Avatar className="avatar placeholder" color = {[255,0,0,0.6]}>Guest</Avatar>;
+      let avatar = <Avatar className="avatar placeholder" >Guest</Avatar>;
       // Link component to be used with Button component
       buttonLink = ({ ...props }) => (
         <Link {...props} to={`/`} onClick={this.props.onLinkClick} className="gc360-link" />
