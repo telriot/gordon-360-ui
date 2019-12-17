@@ -30,6 +30,7 @@ const renderInput = inputProps => {
       InputProps={{
         type : "text",
         disableUnderline: true,
+        label : "people_search",
         classes: {
           root: 'people-search-root',
           input: 'people-search-input',
@@ -376,7 +377,7 @@ export default class GordonPeopleSearch extends Component {
                 label: 'people search'
               },
               startAdornment: (
-                <InputAdornment position="start">
+                <InputAdornment position="start" aria-label="people_search">
                   <SearchIcon />
                 </InputAdornment>
               ),
