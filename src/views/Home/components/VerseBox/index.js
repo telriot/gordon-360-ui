@@ -70,6 +70,8 @@ export default class VerseOfTheDay extends Component {
     if (this.state.loading === true) {
       content = <GordonLoader />;
     } else {
+      // Formats verse with correct quotations
+      // Double quotes of any direction should be changed to single
       content =
         '“' +
         this.state.verse
@@ -88,6 +90,8 @@ export default class VerseOfTheDay extends Component {
     };
 
     let verseBox;
+
+    // This if/else structure will be used to make the verse a collapsible card on mobile
     if (true) {
       verseBox = (
         <Grid item xs={12} md={10}>
