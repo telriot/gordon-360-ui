@@ -1,11 +1,11 @@
 import Grid from '@material-ui/core/Grid';
 import React, { Component } from 'react';
-
 import Carousel from './components/Carousel';
 import CLWCreditsDaysLeft from './components/CLWCreditsDaysLeft';
 import DaysLeft from './components/DaysLeft';
 import Requests from './components/Requests';
 import DiningBalance from './components/DiningBalance';
+import StudentNews from './components/StudentNews';
 import user from '../../services/user';
 import Login from '../Login';
 import './home.css';
@@ -107,6 +107,9 @@ export default class Home extends Component {
           </Grid>
           <Grid item xs={12} md={5}>
             <DiningBalance />
+          </Grid>
+          <Grid item xs={12} md={5}>
+            <StudentNews />
           </Grid>
           {requests}
         </Grid>
