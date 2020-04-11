@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import cms from '../../../../services/cms';
 import ImageGallery from 'react-image-gallery';
 import GordonLoader from '../../../../components/Loader';
+import './carousel.css';
 
 export default class GordonCarousel extends Component {
   constructor(props) {
@@ -14,6 +15,7 @@ export default class GordonCarousel extends Component {
       error: null,
       loading: true,
       carouselContent: {},
+      classname: 'no-link-attached'
     };
 
     this.linkArray = [];
@@ -38,6 +40,15 @@ export default class GordonCarousel extends Component {
     }
   }
 
+  onSlide = index => {
+    let hasLink = this.state.carouselContent[index].ActionLink !== '';
+    if (hasLink) {
+      this.setState({classname: 'has-link-attached'});
+    } else {
+      this.setState({classname: 'no-link-attached'});
+    }
+  }
+
   render() {
     if (this.state.error) {
       throw this.state.error;
@@ -58,6 +69,7 @@ export default class GordonCarousel extends Component {
 
       content = (
         <ImageGallery
+          additionalClass={this.state.classname}
           ref={i => (this._imageGallery = i)}
           showThumbnails={false}
           showFullscreenButton={false}
@@ -68,6 +80,7 @@ export default class GordonCarousel extends Component {
           slideInterval={5000}
           items={images}
           onClick={this.handleClickSlide.bind(this)}
+          onSlide={this.onSlide}
         />
       );
     }
