@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import Card from '@material-ui/core/Card';
-import Collapse from '@material-ui/core/Collapse';
 import { CardContent } from '@material-ui/core';
 import { Button } from '@material-ui/core';
 import { gordonColors } from '../../../../theme';
@@ -73,6 +72,18 @@ export default class DailyNews extends Component {
                   >
                     All News
                 </Button>
+                <Button
+                variant="contained"
+                color="secondary"
+                style={{
+                  color: 'white',
+                }}
+                onClick={() => {
+                  window.location.pathname = '/student-news-submissions';
+                }}
+              >
+                New Submission
+              </Button>
               </Grid>
             </Grid>
           </Card>

@@ -64,7 +64,7 @@ export default class NewsCategory extends Component {
     } else {
       items = this.state.todaysNews
         .map(item => (
-          <NewsItem poster={item.ADUN} subject={item.Subject} body={item.Body} />
+          <NewsItem subject={item.subject} submittedBy={item.name}  description={item.news} />
         ));
     }
 
