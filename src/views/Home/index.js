@@ -5,6 +5,7 @@ import CLWCreditsDaysLeft from './components/CLWCreditsDaysLeft';
 import DaysLeft from './components/DaysLeft';
 import Requests from './components/Requests';
 import DiningBalance from './components/DiningBalance';
+import StudentNews from './components/StudentNews';
 import user from '../../services/user';
 import Login from '../Login';
 import './home.css';
@@ -79,6 +80,7 @@ export default class Home extends Component {
     if (this.props.Authentication) {
       const personType = this.state.personType;
 
+      //get membership requests
       let requests;
       if (networkStatus === 'online') {
         requests = (
@@ -88,6 +90,15 @@ export default class Home extends Component {
         );
       }
 
+      //get student news
+      let news;
+      if (networkStatus === 'online') {
+        news = (
+          <Grid item xs={12} md={5}>
+            <StudentNews />
+          </Grid>
+        );
+      }
       //Only show CL&W credits if user is a student
       let doughnut;
       if (String(personType).includes('stu')) {
@@ -108,6 +119,7 @@ export default class Home extends Component {
             <DiningBalance />
           </Grid>
           {requests}
+          {news}
         </Grid>
       );
     } else {
