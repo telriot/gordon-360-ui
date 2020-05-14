@@ -36,6 +36,7 @@ import http from './http';
  * @return {Promise.<String{}>} Student news
  */
 
+
 const getNotExpired = () => http.get(`news/not-expired`);
 
 const getNewNews = async () => await http.get(`news/new`);
@@ -44,6 +45,7 @@ const getCategories = () => http.get(`news/categories`);
 
 /**
  * Gets today's news for given category
+ * for use on the Home Page card
  * @param {Number} category the category of news
  */
 const getTodaysNews = async category => {
@@ -60,6 +62,7 @@ const getTodaysNews = async category => {
 
 /**
  * Get all unexpired news for given category
+ * For use on the News Page
  * @param {Number} category the category that
  */
 const getNewsByCategory = async category => {

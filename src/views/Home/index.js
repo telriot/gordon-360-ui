@@ -117,8 +117,8 @@ export default class Home extends Component {
           <Grid item xs={12} md={5}>
             <DiningBalance />
           </Grid>
-          {requests}
           {news}
+          {requests}
         </Grid>
       );
     } else {
