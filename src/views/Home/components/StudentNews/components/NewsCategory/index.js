@@ -3,8 +3,8 @@ import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import Collapse from '@material-ui/core/Collapse';
 import { Button } from '@material-ui/core';
-import { gordonColors } from '../../../../theme';
-import news from '../../../../services/news';
+import { gordonColors } from '../../../../../../theme';
+import studentNewsService from '../../../../../../services/studentNewsService';
 
 import NewsItem from '../NewsItem';
 
@@ -31,7 +31,7 @@ export default class NewsCategory extends Component {
 
     //this doesn't do anything and may break since the backend
     //isn't written
-    todaysNews = await news.getTodaysNews(this.props.category);
+    todaysNews = await studentNewsService.getTodaysNews(this.props.categoryID);
 
     this.setstate({ todaysNews });
   }

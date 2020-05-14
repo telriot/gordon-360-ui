@@ -14,11 +14,7 @@ import PeopleSearch from './views/PeopleSearch';
 import ProfileNotFound from './views/ProfileNotFound';
 import IDUploader from './views/IDUploader';
 import Admin from './views/Admin';
-<<<<<<< HEAD
-import Timesheets from './views/Timesheets';
-=======
 import StudentNewsSubmissions from './views/StudentNewsSubmissions';
->>>>>>> 6c43f8e25444e48bdf763394c5681229561038cc
 import BannerSubmission from './views/BannerSubmission';
 
 // Route order must be from most specific to least specific (i.e. `/user/:username` before `/user`)
@@ -100,15 +96,9 @@ export default [
     component: Admin,
   },
   {
-<<<<<<< HEAD
-    name: 'Timesheets',
-    path: '/t1m35433t5',
-    component: Timesheets,
-=======
     name: 'Student News',
     path: '/student-news-submissions',
     component: StudentNewsSubmissions,
->>>>>>> 6c43f8e25444e48bdf763394c5681229561038cc
   },
   {
     name: 'Banner',

@@ -6,7 +6,6 @@ import CLWCreditsDaysLeft from './components/CLWCreditsDaysLeft';
 import DaysLeft from './components/DaysLeft';
 import Requests from './components/Requests';
 import DiningBalance from './components/DiningBalance';
-import StudentNews from './components/StudentNews';
 import user from '../../services/user';
 import Login from '../Login';
 import './home.css';
@@ -119,13 +118,7 @@ export default class Home extends Component {
             <DiningBalance />
           </Grid>
           {requests}
-<<<<<<< HEAD
           {news}
-=======
-          <Grid item xs={12} md={5}>
-            <StudentNews />
-          </Grid>
->>>>>>> 6c43f8e25444e48bdf763394c5681229561038cc
         </Grid>
       );
     } else {

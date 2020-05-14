@@ -5,7 +5,7 @@ import Card from '@material-ui/core/Card';
 import { CardContent } from '@material-ui/core';
 import { Button } from '@material-ui/core';
 import { gordonColors } from '../../../../theme';
-import news from '../../../../services/news';
+import studentNewsService from '../../../../services/studentNewsService';
 
 import NewsCategory from './components/NewsCategory';
 
@@ -28,7 +28,7 @@ export default class DailyNews extends Component {
   async loadNews() {
     let newsCategories;
 
-    newsCategories = await news.getCategories();
+    newsCategories = await studentNewsService.getCategories();
 
     this.setState({ newsCategories });
   }
@@ -65,13 +65,13 @@ export default class DailyNews extends Component {
                 <Typography variant="body2" style={headerStyle}>
                   Today's Student News
                 </Typography>
-              </Grid>
-              <Grid item>
                 <Button size="small" style={button}
                   onClick={() => (window.location.pathname = '/news')}
                   >
                     All News
                 </Button>
+              </Grid>
+              <Grid item>
                 <Button
                 variant="contained"
                 color="secondary"
