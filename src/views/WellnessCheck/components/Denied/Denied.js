@@ -69,11 +69,11 @@ export default class Home extends Component {
                  <Grid spacing={2}>
                     <Card className="card">
                          <CardHeader title="Denied"/>
-                         <CardContent className = "denied-box">
-                             <div className = "denied-time">
+                         <CardContent id = "denied-box">
+                             <div id = "denied-x">
                                {this.state.time}
                              </div>
-                             <div className = "cross-mark">
+                             <div id= "cross-mark">
                               &#10005;
                              </div>
                          </CardContent>
