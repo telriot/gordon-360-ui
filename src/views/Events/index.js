@@ -6,6 +6,7 @@ import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
 import Button from '@material-ui/core/Button';
 import Collapse from '@material-ui/core/Collapse';
+import Switch from '@material-ui/core/Switch';
 import gordonEvent from './../../services/event';
 import EventList from '../../components/EventList';
 import GordonLoader from '../../components/Loader';
@@ -309,15 +310,6 @@ export default class Events extends Component {
           <FormGroup row>
             <FormControlLabel
               control={
-                <Checkbox
-                  checked={this.state.chapelCredits}
-                  onChange={this.filterEvents('chapelCredits')}
-                />
-              }
-              label="CL&amp;W Credit"
-            />
-            <FormControlLabel
-              control={
                 <Checkbox checked={this.state.includePast} onChange={this.togglePastEvents} />
               }
               label="Include Past"
@@ -425,6 +417,15 @@ export default class Events extends Component {
                     fullWidth
                   />
                 </Grid>
+                <FormControlLabel
+                  control={
+                    <Switch
+                      checked={this.state.chapelCredits}
+                      onChange={this.filterEvents('chapelCredits')}
+                    />
+                  }
+                  label="CL&amp;W Credit"
+                />
                 <Grid
                   container
                   justify="flex-end"
